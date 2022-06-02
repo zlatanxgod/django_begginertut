@@ -13,3 +13,11 @@ class AuthorView(ListAPIView):
  
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
+
+class AuthorInstanceView(generics.RetrieveAPIView):
+    """
+    Returns a single author.
+    Also allows updating and deleting
+    """
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
